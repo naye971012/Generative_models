@@ -28,7 +28,7 @@ def get_loaders(args) -> Tuple[DataLoader,DataLoader,Tuple]:
 def get_dataset_cifar10(args):
     trainset = datasets.CIFAR10(root=args.data_save_path, train=True,
                                             download=True, transform=transforms.Compose([
-                                                            transforms.Resize((64, 64)),  # Resize images to 64x64
+                                                            transforms.Resize((args.image_size, args.image_size)),  # Resize images to 64x64
                                                             transforms.ToTensor(),        # Convert images to PyTorch tensors
                                                             transforms.Normalize(         # Normalize the tensor values
                                                                 mean=[0.5, 0.5, 0.5],     # Mean for each channel
@@ -38,7 +38,7 @@ def get_dataset_cifar10(args):
 
     testset = datasets.CIFAR10(root=args.data_save_path, train=False,
                                         download=True, transform=transforms.Compose([
-                                                        transforms.Resize((64, 64)),  # Resize images to 64x64
+                                                        transforms.Resize((args.image_size, args.image_size)),  # Resize images to 64x64
                                                         transforms.ToTensor(),        # Convert images to PyTorch tensors
                                                         transforms.Normalize(         # Normalize the tensor values
                                                             mean=[0.5, 0.5, 0.5],     # Mean for each channel

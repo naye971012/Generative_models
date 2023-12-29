@@ -12,6 +12,8 @@ def get_loaders(args) -> Tuple[DataLoader,DataLoader,Tuple]:
     """
     if(args.data_name=='cifar10'):
         trainset, testset, classes = get_dataset_cifar10(args)
+    elif(args.data_name=='mnist'):
+        trainset, testset, classes = get_dataset_mnist(args)
     else:
         raise "data not exist"
 
@@ -56,7 +58,7 @@ def get_dataset_mnist(args):
     testset = datasets.MNIST(root=args.save_path, train=False,
                                         download=True, transform=transforms.ToTensor())
     
-    classes = ()
+    classes = (0,1,2,3,4,5,6,7,8,9)
 
     return trainset, testset, classes
 

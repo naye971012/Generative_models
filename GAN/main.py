@@ -2,13 +2,14 @@ import torch
 import torch.nn as nn
 import numpy as np
 import argparse
-
-from trainer import get_loaders,train,validate
-from model import get_model
 import wandb
-
 import ssl
 ssl._create_default_https_context = ssl._create_unverified_context
+
+from common.dataset import get_loaders
+from trainer import train,validate
+from model import get_model
+
 
 def main(args):
     
@@ -48,7 +49,7 @@ def get_args():
     parser.add_argument('--latent_size', type=int, default=100, help='latent vector size')
 
     #Save arguments
-    parser.add_argument('--logging', type=bool, default=True, help='log train/validation in wandb')
+    parser.add_argument('--logging', type=bool, default=False, help='log train/validation in wandb')
     parser.add_argument('--save_model', type=bool, default=False, help='save model')
     parser.add_argument('--save_path', type=str, default='model_pth/gan/', help='save model path')
     parser.add_argument('--save_step_image', type=bool, default=True, help='save generated image step by step')

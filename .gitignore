@@ -1,4 +1,7 @@
 data/*
+data
 __pycache__/*
 wandb/*
+wandb
 img/*
+img

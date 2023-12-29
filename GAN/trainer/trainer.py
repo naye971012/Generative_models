@@ -114,6 +114,9 @@ def train(args, model_D, model_G, train_loader, valid_loader, device):
                                    DGz1=epoch_D_G_z1/(i+1),
                                    DGz2=epoch_D_G_z2/(i+1))
 
+            if step==0 and args.save_step_image:
+                save_image(args,"train",_image)
+            
             if step%30==0 and args.logging:
                 wandb.log({"err_Generator": epoch_errG/(i+1),
                        "err_Discriminator": epoch_errD/(i+1),

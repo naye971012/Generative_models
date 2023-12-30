@@ -39,7 +39,7 @@ def save_image(args, step, image_tensor, flag=False):
     
     path = f'{args.image_save_path}/step_{step}.png'
     plt.savefig(path)
-
+    plt.close()
     if args.logging:
         if flag:
             wandb.log({"denoising_images": wandb.Image(path) })

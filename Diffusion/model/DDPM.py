@@ -68,7 +68,7 @@ class Diffusion:
                 x = 1 / torch.sqrt(alpha) * (x - ((1 - alpha) / (torch.sqrt(1 - alpha_hat))) * predicted_noise) \
                                             + torch.sqrt(beta) * noise
                 
-                if i%10==0:
+                if i%10==9:
                     denoising_step_arr.append( ((x[0].clamp(-0.999, 0.999) + 1) / 2).to('cpu').detach() )
         
         model.train()

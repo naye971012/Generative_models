@@ -52,22 +52,23 @@
     image_size: 32 #original image size
     batch_size: 16
     lr: 0.0002
-    epoch: 10
+    epoch: 6
     model_dim: 32 #determine model size
     noise_steps: 500 #used when prepare_noise_schedule
     beta_start: 1e-4 #used when prepare_noise_schedule
     beta_end: 2e-2 #used when prepare_noise_schedule
 ```
-- Output Example (Left: Real, Right: Generated)
+- Output Example (Left: Real, Middle: Denoising Process Right: Generated)
 
 <div style="display: flex; justify-content: center;">
-    <img src="" style="width: 45%; margin-right: 5px;">
-    <img src="" style="width: 45%; margin-left: 5px;">
+    <img src="https://github.com/naye971012/Generative_models/assets/74105909/b5d50d13-aac1-4369-8d4e-b73b5695b557" style="width: 30%; margin-right: 5px;">
+    <img src="https://github.com/naye971012/Generative_models/assets/74105909/bea49658-2fbe-4a98-be00-67ad58dc2cae" style="width: 30%;" >
+    <img src="https://github.com/naye971012/Generative_models/assets/74105909/62ec816d-9fc7-4248-97a7-851275146e0a" style="width: 30%; margin-left: 5px;">
 </div>
 
 - Training Process
 
-![DDPM_Cifar10]()
+![DDPM_Cifar10](https://github.com/naye971012/Generative_models/assets/74105909/a32c0639-9970-4ad4-bb43-cb5d450a0d45)
 
 
 
